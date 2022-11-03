@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import "./Contact.css"
 
-export default function Contact() {
-    URL = process.env.FIREBASE_DATABASE_URL;
-    console.log(URL);
+export default function Contact(props) {
+
     const [data, setData] = useState({
         name: "",
         email: "",
@@ -25,7 +24,7 @@ export default function Contact() {
     const sendData = async (e) => {
         e.preventDefault(); // Use for stop to getting Page "Unable to POST/"
         if (name && email && message && address && phone) {
-            let res = await fetch('https://contact-form-react-2a6a6-default-rtdb.firebaseio.com/userData.json', {
+            let res = await fetch(props.url, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
