@@ -55,7 +55,7 @@ export default function Contact(props) {
                 <div className="container">
                     <div className="contactForm">
                         <h2>Send a Message</h2>
-                        <form method="post" netlify>
+                        <form method="post">
                             <div className="formBox">
                                 <div className="inputBox w50">
                                     <input type="text" name="name" value={data.name} onChange={setContactData} required />
